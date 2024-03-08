@@ -1,12 +1,9 @@
 package com.example.myWeb.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "administrador")
@@ -17,6 +14,11 @@ import lombok.Setter;
 public class Administrador extends Persona {
     @Column(name = "cargo")
     private String cargo;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "imagen_id", nullable = false)//
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    @NonNull
+    private Imagen imagen=new Imagen();
 
     public Administrador(String cargo, String apellido, String nombre, String email, long dni, long password) {
         this.cargo = cargo;

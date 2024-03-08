@@ -14,5 +14,5 @@ public class PersonaDTO {
     String apellido;
     String email;
     long dni;
-    long password;
+    String password;
 }

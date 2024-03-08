@@ -22,5 +22,5 @@ public abstract class Persona {
     private String apellido;
     private  String email;
     private long dni;
-    private long password;
+    private String password;
 }

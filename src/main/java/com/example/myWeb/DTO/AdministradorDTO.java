@@ -8,5 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 public class AdministradorDTO extends PersonaDTO {
     String cargo;
+    ImagenDTO imagen;
 
 }

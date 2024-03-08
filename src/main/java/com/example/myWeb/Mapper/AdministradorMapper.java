@@ -6,7 +6,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@org.mapstruct.Mapper(componentModel="Spring")
+@org.mapstruct.Mapper(componentModel="Spring",uses = {ImagenMapper.class})
 public interface AdministradorMapper {
     AdministradorMapper INSTANCE= Mappers.getMapper(AdministradorMapper.class);
 
