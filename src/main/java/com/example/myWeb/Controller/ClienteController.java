@@ -4,6 +4,7 @@ import com.example.myWeb.DTO.ClienteDTO;
 import com.example.myWeb.Service.ClienteService;
 import com.example.myWeb.Service.ClienteServiceImpl;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class ClienteController {
     ClienteService clienteService;
 
     @PostMapping
-    public ClienteDTO Save(@org.springframework.web.bind.annotation.RequestBody ClienteDTO clienteDTO){
+    public ClienteDTO Save(@Valid @org.springframework.web.bind.annotation.RequestBody ClienteDTO clienteDTO){
         return clienteService.save(clienteDTO);
     }
 

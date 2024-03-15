@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "planta")
@@ -25,6 +26,7 @@ public class Planta {
     private int precio;
 
     @Column(name = "descripcion")
+    @Length(min = 26, max = 40)
     private String descripcion;
 
     @ManyToOne

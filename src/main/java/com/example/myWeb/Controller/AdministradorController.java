@@ -7,6 +7,7 @@ import com.example.myWeb.Entity.Imagen;
 import com.example.myWeb.Service.AdminService;
 import com.example.myWeb.Service.AdminServiceImp;
 import com.example.myWeb.Service.CloudinaryService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -37,6 +38,7 @@ public class AdministradorController {
 
     @PostMapping(value = "/create", consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<AdministradorDTO> guardar(
+            @Valid
             @RequestPart("adminDTO") String AdminDTOJson,
             @RequestPart("multipartFile") MultipartFile multipartFile) throws IOException
     {

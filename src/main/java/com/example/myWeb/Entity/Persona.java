@@ -1,6 +1,7 @@
 package com.example.myWeb.Entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,9 +19,12 @@ public abstract class Persona {
     private long id;
     @Column (name = "telefono")
     private  long telefono;
+    @NotBlank(message = "porfavor ingrese nombre")
     private  String nombre;
     private String apellido;
+
     private  String email;
     private long dni;
+
     private String password;
 }
