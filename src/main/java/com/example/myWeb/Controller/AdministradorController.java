@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/administrador")
+@RequestMapping("/admin")
 public class AdministradorController {
     @Autowired
     AdminServiceImp adminServiceImp;

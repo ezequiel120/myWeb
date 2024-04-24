@@ -7,7 +7,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
-@Table(name = "planta")
+@Table(name = "product")
 @Setter
 @Getter
 @AllArgsConstructor

@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/categoria")
+@RequestMapping("/cat")
 public class CategoriaController {
     @Autowired
     CategoriaService categoriaService;
@@ -39,7 +39,7 @@ public class CategoriaController {
 
         if (!categoriaService.exists(id)) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Carrera not found with ID: " + id);
+                    .body("Categoria not found with ID: " + id);
         }
 
         categoriaService.delete(id);

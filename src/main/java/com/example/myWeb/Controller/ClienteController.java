@@ -25,7 +25,7 @@ public class ClienteController {
         return clienteService.save(clienteDTO);
     }
 
-    @PutMapping("/cliente/{id}")
+    @PutMapping("/client/{id}")
     public ClienteDTO update(@PathVariable long id, @org.springframework.web.bind.annotation.RequestBody  ClienteDTO clienteDTO){
         return clienteService.update(id, clienteDTO);
     }

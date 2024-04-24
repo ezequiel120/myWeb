@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/planta")
+@RequestMapping("/product")
 public class PlantaController {
 
     @Autowired
