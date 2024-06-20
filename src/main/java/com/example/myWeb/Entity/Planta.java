@@ -7,7 +7,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
-@Table(name = "product")
+@Table(name = "producto")
 @Setter
 @Getter
 @AllArgsConstructor
@@ -26,16 +26,15 @@ public class Planta {
     private int precio;
 
     @Column(name = "descripcion")
-    @Length(min = 26, max = 40)
+    //@Length(min = 26, max = 40)
     private String descripcion;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
+   @ManyToOne(cascade =CascadeType.PERSIST)
+     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "imagen_id", nullable = false)//
     @OnDelete(action = OnDeleteAction.NO_ACTION)
-    @NonNull
     private Imagen imagen=new Imagen();
 }

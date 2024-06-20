@@ -10,6 +10,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
 @Service
 public class CloudinaryService {
 
@@ -20,8 +22,8 @@ public class CloudinaryService {
 
     public CloudinaryService() {
         valuesMap.put("cloud_name", "di1l9fdja");
-        valuesMap.put("api_key", "836656322868689");
-        valuesMap.put("api_secret", "ld36cqb-4WQ2xZy7V-Z-wBDFPG0");
+        valuesMap.put("api_key", "622139973143978");
+        valuesMap.put("api_secret", "4DRbLricLh-8TW_Q_XLw9wXlB7w");
         cloudinary = new Cloudinary(valuesMap);
 
      /*   Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
@@ -39,13 +41,14 @@ public class CloudinaryService {
         return result;
     }
 
+
     public Map delete(String id) throws IOException {
         Map result = cloudinary.uploader().destroy(id, ObjectUtils.emptyMap());
         return result;
     }
 
     private File convert(MultipartFile multipartFile) throws IOException {
-        File file = new File(multipartFile.getOriginalFilename());
+        File file = new File(Objects.requireNonNull(multipartFile.getOriginalFilename()));
         FileOutputStream fo = new FileOutputStream(file);
         fo.write(multipartFile.getBytes());
         fo.close();

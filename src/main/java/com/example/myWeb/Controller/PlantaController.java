@@ -6,7 +6,6 @@ import com.example.myWeb.Entity.Imagen;
 import com.example.myWeb.Exception.ResourseNotFounException;
 import com.example.myWeb.Service.CloudinaryService;
 import com.example.myWeb.Service.PlantaServiceImpl;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,11 +22,12 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/producto")
 public class PlantaController {
 
     @Autowired
     PlantaServiceImpl plantaService;
+
 
     @Autowired
     CloudinaryService cloudinaryService;
@@ -52,7 +52,6 @@ public class PlantaController {
             return new ResponseEntity(new MensajeDTO("imagen no válida"), HttpStatus.BAD_REQUEST);
         }
         Map result = cloudinaryService.upload(multipartFile);
-
         Imagen imagen = new Imagen();
         imagen.setName  ((String) result.get("original_filename"));
         imagen.setImagenUrl((String) result.get("url"));
